@@ -46,7 +46,7 @@ jobs:
         run: aws s2 cp --region ap-northeast-2 ./$GITHUB_SHA.zip s3://$S3_BUCKET_NAME/$GITHUB_SHA.zip
 
       - name: Code Deploy
-        run: |
+        run:
           aws deploy create-deployment \
           --deployment-config-name CodeDeployDefault.AllAtOnce \
           --application-name ${{ env.CODE_DEPLOY_APPLICATION_NAME }} \
